@@ -50,6 +50,10 @@
      <Compile Include="Assets\Bird\BirdController.cs" />
      <Compile Include="Assets\CubeMover.cs" />
      <Compile Include="Assets\Webcam.cs" />
+     <Compile Include="Assets\opencv.cs" />
+ <Reference Include="Assets\OpenCvSharp">
+ <HintPath>Assets\OpenCvSharp.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

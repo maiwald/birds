@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A2C0B53B-F136-640A-019B-2ECB658F1532}</ProjectGuid>
+	<ProjectGuid>{7872F3B0-CD31-44C3-5591-410AF6127E80}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,14 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Bird\BirdAnimator.cs" />
-     <Compile Include="Assets\Bird\BirdController.cs" />
-     <Compile Include="Assets\CubeMover.cs" />
-     <Compile Include="Assets\Webcam.cs" />
-     <Compile Include="Assets\opencv.cs" />
- <Reference Include="Assets\OpenCvSharp">
- <HintPath>Assets\OpenCvSharp.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\opencv.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
