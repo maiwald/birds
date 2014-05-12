@@ -3,12 +3,12 @@ using System.Collections;
 
 public class CubeMover : MonoBehaviour {
 
-	private Camera camera;
+	private Camera mainCamera;
 	private Vector3 position;
 
 	// Use this for initialization
 	void Start () {
-		camera = Camera.main;
+        mainCamera = Camera.main;
 		position = transform.position;
 	}
 
@@ -17,13 +17,13 @@ public class CubeMover : MonoBehaviour {
 		Vector3 followPosition = Input.mousePosition;
 
 		logPosition("object world", position);
-		logPosition("mouse world", camera.ScreenToWorldPoint(followPosition));
+        logPosition("mouse world", mainCamera.ScreenToWorldPoint(followPosition));
 		logPosition("screen point", followPosition);
-		logPosition("screen object", camera.WorldToScreenPoint(position));
+        logPosition("screen object", mainCamera.WorldToScreenPoint(position));
 
 		gameObject.transform.position = new Vector3(
-			camera.ScreenToWorldPoint(followPosition).x,
-			camera.ScreenToWorldPoint(followPosition).y,
+            mainCamera.ScreenToWorldPoint(followPosition).x,
+            mainCamera.ScreenToWorldPoint(followPosition).y,
 			0);
 	}
 
