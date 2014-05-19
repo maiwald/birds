@@ -4,30 +4,25 @@ using System.Collections;
 public class CubeMover : MonoBehaviour {
 
 	private Camera mainCamera;
-	private Vector3 position;
+
+	void OnTriggerEnter2D(Collider2D col) {
+		Debug.Log (col.gameObject.name);
+	}
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log("Trigger: " + collider2D.isTrigger);
+
         mainCamera = Camera.main;
-		position = transform.position;
 	}
 
 	// Update is called once per frame
 	void Update () {
 		Vector3 followPosition = Input.mousePosition;
 
-		logPosition("object world", position);
-        logPosition("mouse world", mainCamera.ScreenToWorldPoint(followPosition));
-		logPosition("screen point", followPosition);
-        logPosition("screen object", mainCamera.WorldToScreenPoint(position));
-
 		gameObject.transform.position = new Vector3(
             mainCamera.ScreenToWorldPoint(followPosition).x,
             mainCamera.ScreenToWorldPoint(followPosition).y,
 			0);
-	}
-
-	void logPosition(string message, Vector3 p) {
-		Debug.Log (message + " " + p.x + ", " + p.y + ", " + p.z);
 	}
 }

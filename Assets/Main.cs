@@ -4,11 +4,13 @@ using System.Collections;
 public class Main : MonoBehaviour {
 
     public Transform bird;
+	public int numberOfBirds;
+
 
 	// Use this for initialization
 	void Start () {
         Screen.showCursor = false;
-        for (int i = 0; i < 80; i++) {
+        for (int i = 0; i < numberOfBirds; i++) {
             Instantiate(bird);
         }
 	}

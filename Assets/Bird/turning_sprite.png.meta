@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67272101042854f14b6cdd2e703ec086
+guid: 7d89c42eb0c2e2642b27fdaa6844867b
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -45,23 +45,32 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: bird_1
+    - name: turning_sprite_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 14
-        width: 172
-        height: 114
+        x: 0
+        y: 6
+        width: 1000
+        height: 1000
       alignment: 9
-      pivot: {x: .384884328, y: .25610435}
-    - name: bird_2
+      pivot: {x: .436026961, y: .260942757}
+    - name: turning_sprite_1
       rect:
         serializedVersion: 2
-        x: 223
-        y: 14
-        width: 166
-        height: 76
+        x: 1000
+        y: 6
+        width: 1000
+        height: 1000
       alignment: 9
-      pivot: {x: .373110116, y: .366966009}
+      pivot: {x: .496632934, y: .318181813}
+    - name: turning_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6
+        width: 1000
+        height: 1000
+      alignment: 9
+      pivot: {x: .550505102, y: .355218858}
   spritePackingTag: 
   userData: 

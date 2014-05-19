@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51c6a7afc9a874aeeadb0240b98c0b0f
+guid: 19a4337f245fee041aa4df9f0558bc0a
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -45,68 +45,59 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: piep_0
+    - name: flying_sprite_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
-        width: 400
-        height: 400
+        y: 1000
+        width: 1000
+        height: 1000
       alignment: 9
-      pivot: {x: .520080447, y: .372824699}
-    - name: piep_1
+      pivot: {x: .5, y: .469999999}
+    - name: flying_sprite_1
       rect:
         serializedVersion: 2
-        x: 400
-        y: 800
-        width: 400
-        height: 400
+        x: 1000
+        y: 1000
+        width: 1000
+        height: 1000
       alignment: 9
-      pivot: {x: .500000179, y: .392904967}
-    - name: piep_2
+      pivot: {x: .504462302, y: .37505579}
+    - name: flying_sprite_2
       rect:
         serializedVersion: 2
-        x: 798
-        y: 800
-        width: 400
-        height: 400
+        x: 2000
+        y: 1000
+        width: 1000
+        height: 1000
       alignment: 9
-      pivot: {x: .47322616, y: .593708217}
-    - name: piep_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 400
-        width: 400
-        height: 400
-      alignment: 9
-      pivot: {x: .446452588, y: .366131276}
-    - name: piep_4
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 400
-        width: 400
-        height: 400
-      alignment: 9
-      pivot: {x: .439759225, y: .218875661}
-    - name: piep_5
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 400
-        width: 400
-        height: 400
-      alignment: 9
-      pivot: {x: .406291813, y: .151941225}
-    - name: piep_6
+      pivot: {x: .5, y: .49000001}
+    - name: flying_sprite_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        width: 1000
+        height: 1000
+      alignment: 9
+      pivot: {x: .486613035, y: .352744222}
+    - name: flying_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 9
+      pivot: {x: .47322619, y: .218875423}
+    - name: flying_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 9
+      pivot: {x: .482150644, y: .151941031}
   spritePackingTag: 
   userData: 

@@ -7,15 +7,23 @@ public class BirdController : MonoBehaviour {
 	public float moveSpeed = 10;
     public float turnSpeed = 10;
     public float scale = 0.5F;
-
+	
     private Vector3 target;
     private float randomizedMoveSpeed;
+
+	private GameObject obstacle;
 
 	// Use this for initialization
 	void Start () {
         transform.position = RandomScreenPoint();
         target = NextTargetPoint(transform.position);
         randomizedMoveSpeed = moveSpeed + Random.Range(-2, 2);
+
+		obstacle = GameObject.Find ("Obstacle");
+	}
+
+	void OnTriggerEnter2D(Collider2D col) {
+		Debug.Log (col.gameObject.name);
 	}
 
     Vector3 RandomScreenPoint()
@@ -48,7 +56,12 @@ public class BirdController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position, target) < 0.2)
+		if (obstacle.renderer.bounds.Intersects(renderer.bounds)) {
+			BirdAnimator animator = GetComponent("BirdAnimator") as BirdAnimator;
+			animator.StartApproach();
+		}
+
+		if (Vector3.Distance(transform.position, target) < 0.2)
             target = NextTargetPoint(target);
 
         MoveToward(target);
