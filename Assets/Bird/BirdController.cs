@@ -12,21 +12,94 @@ public class BirdController : MonoBehaviour {
     private float randomizedMoveSpeed;
 
 	private GameObject obstacle;
+	private bool approaching;
+	private int approachCounter;
+	private bool approachIsRight;
 
 	// Use this for initialization
 	void Start () {
         transform.position = RandomScreenPoint();
-        target = NextTargetPoint(transform.position);
+		target = OppositeSideTargetPoint(transform.position);
         randomizedMoveSpeed = moveSpeed + Random.Range(-2, 2);
 
 		obstacle = GameObject.Find ("Obstacle");
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
-		Debug.Log (col.gameObject.name);
+	// Update is called once per frame
+	void Update () {
+
+		Bounds obstacleBounds = obstacle.renderer.bounds;
+		float expansion = Random.Range (3, 7);
+		obstacleBounds.Expand (expansion);
+
+		Main main = Camera.main.GetComponent ("Main") as Main;
+		if (obstacleBounds.Intersects (renderer.bounds) && main.circling) {
+			StartApproach ();
+		}
+
+		if (approaching) {
+			Vector3 newPosition = transform.position;
+			Vector3 localScale = transform.localScale;
+			float scaleFactor = 1.05f;
+
+			approachCounter += 1;
+
+			if (approachIsRight) {
+				newPosition.x = newPosition.x + ApproachDistance (approachCounter);
+			} else {
+				newPosition.x = newPosition.x - ApproachDistance (approachCounter);
+			}
+
+			localScale.x *= scaleFactor;
+			localScale.y *= scaleFactor;
+			localScale.z *= scaleFactor;
+
+			transform.position = newPosition;
+			transform.localScale = localScale;
+
+			if (!renderer.isVisible || localScale.x > 1) {
+				StartFlying ();
+			}
+		} else {
+			if (Input.GetMouseButton (0)) {
+				MoveToward (NestPosition());
+				main.waitForApproach();
+			} else {
+				if (Vector3.Distance (transform.position, target) < 0.2) {
+					target = OppositeSideTargetPoint (target);
+				}
+		
+				MoveToward (target);
+			}
+		}
 	}
 
-    Vector3 RandomScreenPoint()
+	void StartApproach() {
+		if (!approaching) {
+			BirdAnimator animator = GetComponent("BirdAnimator") as BirdAnimator;
+			animator.StartApproach();
+
+			Vector3 newPosition = Camera.main.WorldToScreenPoint(transform.position);
+			newPosition.z = 9;
+			transform.position = Camera.main.ScreenToWorldPoint(newPosition);
+
+			approaching = true;
+			approachCounter = 0;
+			approachIsRight = IsRightOfObstacle();
+		}
+	}
+	
+	void StartFlying() {
+		BirdAnimator animator = GetComponent("BirdAnimator") as BirdAnimator;
+		animator.StartFlying();
+
+		transform.position = OppositeSideTargetPoint (RandomScreenPoint ());
+		transform.localScale = new Vector3(scale, scale, scale);
+
+		approaching = false;
+	}
+
+    private Vector3 RandomScreenPoint()
     {
         float x = Random.Range(0, Camera.main.pixelWidth);
         float y = Random.Range(0, Camera.main.pixelHeight);
@@ -34,7 +107,7 @@ public class BirdController : MonoBehaviour {
         return Camera.main.ScreenToWorldPoint(new Vector3(x, y, 10));
     }
 
-    Vector3 NextTargetPoint(Vector2 initial)
+	private Vector3 OppositeSideTargetPoint(Vector3 initial)
     {
         int offScreenSpace = 80;
         float x, y;
@@ -54,23 +127,20 @@ public class BirdController : MonoBehaviour {
         return Camera.main.ScreenToWorldPoint(new Vector3(x, y, 10));
     }
 	
-	// Update is called once per frame
-	void Update () {
-		if (obstacle.renderer.bounds.Intersects(renderer.bounds)) {
-			BirdAnimator animator = GetComponent("BirdAnimator") as BirdAnimator;
-			animator.StartApproach();
-		}
 
-		if (Vector3.Distance(transform.position, target) < 0.2)
-            target = NextTargetPoint(target);
+	float ApproachDistance(int counter) {
+		float val = Mathf.Pow (counter * 0.1f - 0.5f, 2) - 1f;
+		return val * 0.1f;
+	}
 
-        MoveToward(target);
+
+	bool IsRightOfObstacle() {
+		return obstacle.transform.position.x < transform.position.x;
 	}
 
     void MoveToward(Vector3 moveToward)
     {
         Vector3 currentPosition = transform.position;
-        Vector3 localScale = transform.localScale;
         Vector3 moveDirection = moveToward - currentPosition;
 
         moveDirection.z = 0;
@@ -88,17 +158,16 @@ public class BirdController : MonoBehaviour {
         int angle = (int)transform.rotation.eulerAngles.z;
         if (Enumerable.Range(90, 180).Contains(angle))
         {
-            localScale.x = scale;
-            localScale.y = -scale;
-            localScale.z = -scale;
+			transform.localScale = new Vector3(scale, -scale, -scale);
         }
         else
         {
-            localScale.x = scale;
-            localScale.y = scale;
-            localScale.z = scale;
+			transform.localScale = new Vector3(scale, scale, scale);
         }
-        transform.localScale = localScale;
     }
+
+	Vector3 NestPosition() {
+		return Camera.main.ScreenToWorldPoint (new Vector3 (Camera.main.pixelWidth * 0.8f, - Camera.main.pixelWidth * 0.1f, 9));
+	}
 
 }

@@ -36,7 +36,7 @@ public class BirdAnimator : MonoBehaviour {
 		currentSprites = approaching;	
 	}
 
-	void StartFlying() {
+	public void StartFlying() {
 		currentSprites = flying;
 	}
 }
