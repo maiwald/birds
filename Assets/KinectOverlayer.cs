@@ -9,10 +9,6 @@ public class KinectOverlayer : MonoBehaviour
 	public Vector3 BottomLeft;
 	
 	public KinectWrapper.NuiSkeletonPositionIndex TrackedJoint = KinectWrapper.NuiSkeletonPositionIndex.HandRight;
-
-	public GUIText debugText;
-
-	private float bla = 0f;
 	
 	void Update () 
 	{
@@ -50,7 +46,7 @@ public class KinectOverlayer : MonoBehaviour
 					GameObject.Find ("Obstacle").transform.position = new Vector3(
 						vOverlayPosition.y * -1f,
 						vOverlayPosition.x,
-						5
+						0
 						);
 				}
 			}
