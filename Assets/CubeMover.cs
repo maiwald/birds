@@ -21,6 +21,6 @@ public class CubeMover : MonoBehaviour {
 		gameObject.transform.position = new Vector3(
             mainCamera.ScreenToWorldPoint(followPosition).x,
             mainCamera.ScreenToWorldPoint(followPosition).y,
-			0);
+			5);
 	}
 }

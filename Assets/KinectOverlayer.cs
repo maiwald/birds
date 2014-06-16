@@ -50,7 +50,7 @@ public class KinectOverlayer : MonoBehaviour
 					GameObject.Find ("Obstacle").transform.position = new Vector3(
 						vOverlayPosition.y * -1f,
 						vOverlayPosition.x,
-						0
+						5
 						);
 				}
 			}

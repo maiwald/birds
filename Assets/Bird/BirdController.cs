@@ -105,7 +105,10 @@ public class BirdController : MonoBehaviour {
         float x = Random.Range(0, Camera.main.pixelWidth);
         float y = Random.Range(0, Camera.main.pixelHeight);
 
-        return Camera.main.ScreenToWorldPoint(new Vector3(x, y, 10));
+		Vector3 result = Camera.main.ScreenToWorldPoint (new Vector3 (x, y, 10));
+		result.z = 0;
+
+        return result;
     }
 
 	private Vector3 OppositeSideTargetPoint(Vector3 initial)
@@ -125,8 +128,11 @@ public class BirdController : MonoBehaviour {
         // don't always change y point
         y = (Random.value > 0.5) ? initial.y : Random.Range(0, Camera.main.pixelHeight);
 
-        return Camera.main.ScreenToWorldPoint(new Vector3(x, y, 10));
-    }
+		Vector3 result = Camera.main.ScreenToWorldPoint (new Vector3 (x, y, 10));
+		result.z = 0;
+		
+		return result;
+	}
 	
 
 	float ApproachDistance(int counter) {
@@ -168,7 +174,13 @@ public class BirdController : MonoBehaviour {
     }
 
 	Vector3 NestPosition() {
-		return Camera.main.ScreenToWorldPoint (new Vector3 (Camera.main.pixelWidth * 0.8f, - Camera.main.pixelWidth * 0.1f, 9));
+		Vector3 result = Camera.main.ScreenToWorldPoint (new Vector3 (
+			Camera.main.pixelWidth * 0.8f,
+			- Camera.main.pixelWidth * 0.1f,
+			0));
+
+		result.z = 0;
+		return result;
 	}
 
 }
