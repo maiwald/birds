@@ -29,11 +29,12 @@ public class BirdController : MonoBehaviour {
 	void Update () {
 
 		Bounds obstacleBounds = obstacle.renderer.bounds;
+		// change this to change obstacle distance condition for start of approach
 		float expansion = Random.Range (3, 7);
 		obstacleBounds.Expand (expansion);
 
 		Main main = Camera.main.GetComponent ("Main") as Main;
-		if (obstacleBounds.Intersects (renderer.bounds) && main.circling) {
+		if (obstacle.renderer.enabled && obstacleBounds.Intersects (renderer.bounds) && main.circling) {
 			StartApproach ();
 		}
 

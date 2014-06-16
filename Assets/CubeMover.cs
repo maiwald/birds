@@ -11,8 +11,6 @@ public class CubeMover : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log("Trigger: " + collider2D.isTrigger);
-
         mainCamera = Camera.main;
 	}
 
