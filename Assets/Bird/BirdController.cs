@@ -34,7 +34,8 @@ public class BirdController : MonoBehaviour {
 		obstacleBounds.Expand (expansion);
 
 		Main main = Camera.main.GetComponent ("Main") as Main;
-		if (obstacle.renderer.enabled && obstacleBounds.Intersects (renderer.bounds) && main.circling) {
+
+		if (main.circling && obstacle.renderer.enabled && obstacleBounds.Intersects (renderer.bounds)) {
 			StartApproach ();
 		}
 
@@ -62,7 +63,7 @@ public class BirdController : MonoBehaviour {
 				StartFlying ();
 			}
 		} else {
-			if (Input.GetMouseButton (0)) {
+			if (main.IsIdle()) {
 				MoveToward (NestPosition());
 				main.waitForApproach();
 			} else {

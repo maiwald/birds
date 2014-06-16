@@ -14,7 +14,7 @@ public class Main : MonoBehaviour {
 	public Vector3 TopRight;
 	public Vector3 BottomRight;
 	public Vector3 BottomLeft;
-	
+
 	public int trackedJoint = (int) KinectWrapper.NuiSkeletonPositionIndex.Spine;
 	private GameObject obstacle;
 
@@ -39,5 +39,9 @@ public class Main : MonoBehaviour {
 
 	public void waitForApproach() {
 		circleTimeout = Time.realtimeSinceStartup;
+	}
+
+	public bool IsIdle() {
+		return Input.GetMouseButton (0);
 	}
 }
