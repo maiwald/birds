@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 19a4337f245fee041aa4df9f0558bc0a
+guid: 2ca51f85411e78c4f9d5b580ed51750a
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -49,55 +49,55 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1000
-        width: 1000
-        height: 1000
+        y: 500
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .5, y: .469999999}
+      pivot: {x: .537037075, y: .452861816}
     - name: flying_sprite_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 1000
-        height: 1000
+        x: 500
+        y: 500
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .504462302, y: .37505579}
+      pivot: {x: .537037015, y: .38552174}
     - name: flying_sprite_2
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1000
-        width: 1000
-        height: 1000
-      alignment: 9
-      pivot: {x: .5, y: .49000001}
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: .5, y: .5}
     - name: flying_sprite_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 1000
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .486613035, y: .352744222}
+      pivot: {x: .506734014, y: .355218738}
     - name: flying_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 9
+      pivot: {x: .493265986, y: .196969584}
+    - name: flying_sprite_5
       rect:
         serializedVersion: 2
         x: 1000
         y: 0
-        width: 1000
-        height: 1000
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .47322619, y: .218875423}
-    - name: flying_sprite_5
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 9
-      pivot: {x: .482150644, y: .151941031}
+      pivot: {x: .476430923, y: .15319854}
   spritePackingTag: 
   userData: 

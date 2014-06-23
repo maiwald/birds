@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d89c42eb0c2e2642b27fdaa6844867b
+guid: 7ea573521d1995a47a8e4606c6e8f513
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -49,28 +49,28 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 6
-        width: 1000
-        height: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .436026961, y: .260942757}
+      pivot: {x: .462962985, y: .308080852}
     - name: turning_sprite_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 6
-        width: 1000
-        height: 1000
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .496632934, y: .318181813}
+      pivot: {x: .503366947, y: .355218858}
     - name: turning_sprite_2
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 6
-        width: 1000
-        height: 1000
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .550505102, y: .355218858}
+      pivot: {x: .557238996, y: .395622939}
   spritePackingTag: 
   userData: 

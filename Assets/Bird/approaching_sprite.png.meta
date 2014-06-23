@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ce1fbd24a404064ba2a205f8d479af4
+guid: 2e03763e72edc6045aff82d553b0f91e
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -49,19 +49,46 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1000
-        height: 1000
+        y: 500
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .5, y: .42592597}
+      pivot: {x: .523569047, y: .398989737}
     - name: approaching_sprite_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 1000
-        height: 1000
+        x: 500
+        y: 500
+        width: 500
+        height: 500
       alignment: 9
-      pivot: {x: .513468027, y: .42592597}
+      pivot: {x: .520202041, y: .392255723}
+    - name: approaching_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
+      alignment: 9
+      pivot: {x: .506734133, y: .328282714}
+    - name: approaching_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 500
+      alignment: 9
+      pivot: {x: .5, y: .425925821}
+    - name: approaching_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 9
+      pivot: {x: .506734014, y: .436026812}
   spritePackingTag: 
   userData: 
