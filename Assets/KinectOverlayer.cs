@@ -16,7 +16,7 @@ public class KinectOverlayer : MonoBehaviour
 		
 		if(manager && manager.IsInitialized())
 		{
-			// this.renderer.material.mainTexture = manager.GetUsersClrTex();
+			this.renderer.material.mainTexture = manager.GetUsersClrTex();
 			
 			Vector3 vRight = BottomRight - BottomLeft;
 			Vector3 vUp = TopLeft - BottomLeft;
