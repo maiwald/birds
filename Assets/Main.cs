@@ -53,7 +53,7 @@ public class Main : MonoBehaviour {
 	{
 		while (t.IsAlive && !_shouldKillHandler) {
 			try {
-				this.idle = !(arduino.ReadLine ().Equals ("1"));
+				this.idle = !(arduino.ReadLine ().Equals ("0"));
 			} catch (System.Exception) {}
 		}
 	}

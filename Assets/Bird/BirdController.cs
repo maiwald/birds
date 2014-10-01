@@ -176,7 +176,7 @@ public class BirdController : MonoBehaviour {
 
 	Vector3 NestPosition() {
 		Vector3 result = Camera.main.ScreenToWorldPoint (new Vector3 (
-			Camera.main.pixelWidth * 0.8f,
+			Camera.main.pixelWidth * 0.7f,
 			- Camera.main.pixelWidth * 0.1f,
 			0));
 

@@ -45,7 +45,7 @@ public class KinectOverlayer : MonoBehaviour
 					Vector3 vOverlayPosition = BottomLeft + ((vRight * scaleX) + (vUp * scaleY));
 					GameObject.Find ("Obstacle").transform.position = new Vector3(
 						vOverlayPosition.y * -1f,
-						vOverlayPosition.x,
+						2.5f,
 						0
 						);
 				}
