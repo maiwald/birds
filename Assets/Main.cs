@@ -36,7 +36,7 @@ public class Main : MonoBehaviour {
             Application.Quit();
         }
 
-		circling = (Time.realtimeSinceStartup - circleTimeout) > 4;
+		circling = (Time.realtimeSinceStartup - circleTimeout) > 8;
 	}
 
 	void OnDestroy() {

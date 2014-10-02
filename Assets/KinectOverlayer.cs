@@ -16,7 +16,7 @@ public class KinectOverlayer : MonoBehaviour
 		
 		if(manager && manager.IsInitialized())
 		{
-			this.renderer.material.mainTexture = manager.GetUsersClrTex();
+			// this.renderer.material.mainTexture = manager.GetUsersClrTex();
 			
 			Vector3 vRight = BottomRight - BottomLeft;
 			Vector3 vUp = TopLeft - BottomLeft;
@@ -29,7 +29,9 @@ public class KinectOverlayer : MonoBehaviour
 				
 				if(manager.IsJointTracked(userId, iJointIndex))
 				{
-					GameObject.Find("Obstacle").renderer.enabled = true;
+					GameObject obstacle = GameObject.Find("Obstacle");
+
+					obstacle.renderer.enabled = true;
 
 					Vector3 posJoint = manager.GetRawSkeletonJointPos(userId, iJointIndex);
 					
@@ -41,13 +43,18 @@ public class KinectOverlayer : MonoBehaviour
 					
 					float scaleX = (float)posColor.x / Camera.main.pixelWidth;
 					float scaleY = 1.0f - (float)posColor.y / Camera.main.pixelHeight;
-					
+
 					Vector3 vOverlayPosition = BottomLeft + ((vRight * scaleX) + (vUp * scaleY));
-					GameObject.Find ("Obstacle").transform.position = new Vector3(
-						vOverlayPosition.y * -1f,
-						2.5f,
-						0
+
+					Debug.Log(Mathf.Abs(obstacle.transform.position.y - vOverlayPosition.y));
+					if (Mathf.Abs(obstacle.transform.position.y - vOverlayPosition.y) < 6)
+					{
+						obstacle.transform.position = new Vector3(
+							vOverlayPosition.y * -1f,
+							2.5f,
+							0
 						);
+					}
 				}
 			}
 			else
